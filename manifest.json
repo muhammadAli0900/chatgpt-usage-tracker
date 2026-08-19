@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Usage Tracker",
+  "version": "1.4.1",
+  "description": "Track ChatGPT usage limits and estimate conversation context and token usage.",
+  "host_permissions": [
+    "https://chatgpt.com/*"
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "page-interceptor.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "config.js",
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ChatGPT Usage Tracker"
+  }
+}
