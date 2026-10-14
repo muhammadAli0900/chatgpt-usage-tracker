@@ -124,4 +124,4 @@ ChatGPT Usage Tracker is an independent, unofficial Chrome extension. It is not 
 
 ## License
 
-License information will be added before the public release.
+This project is licensed under the [MIT License](LICENSE).

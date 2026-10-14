@@ -5,6 +5,6 @@
   "scripts": {
     "test": "node --test tests/usage.test.js"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "description": "Dependency-free Codex / Work usage tracker for Chrome."
 }
