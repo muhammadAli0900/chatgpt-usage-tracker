@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "ChatGPT Usage Tracker",
   "version": "1.4.1",
-  "description": "Track ChatGPT usage limits and estimate conversation context and token usage.",
+  "description": "Show 5-hour and weekly Codex / Work usage from ChatGPT's own usage requests.",
   "host_permissions": [
     "https://chatgpt.com/*"
   ],
@@ -25,7 +25,7 @@
         "https://chatgpt.com/*"
       ],
       "js": [
-        "config.js",
+        "usage.js",
         "content.js"
       ],
       "css": [

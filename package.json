@@ -1,12 +1,10 @@
 {
   "name": "chatgpt-usage-tracker",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.4.1",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test tests/usage.test.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "UNLICENSED",
+  "description": "Dependency-free Codex / Work usage tracker for Chrome."
 }

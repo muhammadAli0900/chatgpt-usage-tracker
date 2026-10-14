@@ -1,101 +1,41 @@
-#chatgpt-usage-tracker {
+.cut-tracker {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
+  gap: 8px 16px;
   width: min(100%, 48rem);
   box-sizing: border-box;
   margin: 4px auto 0;
-  padding: 7px 12px;
-  border: 1px solid color-mix(in srgb, currentColor 9%, transparent);
+  padding: 9px 12px;
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
   border-radius: 10px;
-  background: color-mix(in srgb, currentColor 3%, transparent);
+  background: color-mix(in srgb, currentColor 4%, transparent);
   color: inherit;
-  font: 11px/1.3 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font: 11px/1.4 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
-
-#chatgpt-usage-tracker .cut-model {
-  flex: 0 1 150px;
-  overflow: hidden;
-  font-size: 12px;
-  font-weight: 600;
-  text-align: right;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.cut-tracker [hidden] { display: none !important; }
+.cut-tracker .cut-heading { flex: 0 1 150px; display: flex; flex-direction: column; gap: 3px; }
+.cut-tracker .cut-heading > strong { font-size: 12px; }
+.cut-tracker .cut-plan { color: color-mix(in srgb, currentColor 75%, transparent); }
+.cut-tracker .cut-window { flex: 1 1 160px; min-width: 0; --cut-meter-color: #10a37f; }
+.cut-tracker .cut-window[data-level="caution"] { --cut-meter-color: #d69a17; }
+.cut-tracker .cut-window[data-level="critical"] { --cut-meter-color: #e16a32; }
+.cut-tracker .cut-window[data-level="reached"] { --cut-meter-color: #e34c58; }
+.cut-tracker .cut-window-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 8px; }
+.cut-tracker .cut-window-heading strong { font-variant-numeric: tabular-nums; }
+.cut-tracker .cut-progress { height: 5px; margin: 5px 0; overflow: hidden; border-radius: 999px; background: color-mix(in srgb, currentColor 15%, transparent); }
+.cut-tracker .cut-progress span { display: block; height: 100%; border-radius: inherit; background: var(--cut-meter-color); transition: width 180ms ease; }
+.cut-tracker .cut-reset { color: color-mix(in srgb, currentColor 75%, transparent); font-variant-numeric: tabular-nums; }
+.cut-tracker .cut-footer { flex: 1 1 100%; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 3px 12px; font-size: 10px; color: color-mix(in srgb, currentColor 75%, transparent); }
+.cut-tracker .cut-updated { display: flex; flex-wrap: wrap; gap: 4px 8px; }
+.cut-tracker .cut-stale { color: inherit; padding: 0 4px; border: 1px solid currentColor; border-radius: 4px; }
+@media (max-width: 600px) {
+  .cut-tracker { gap: 8px 12px; }
+  .cut-tracker .cut-heading { flex-basis: 100%; flex-direction: row; flex-wrap: wrap; justify-content: space-between; }
 }
-
-#chatgpt-usage-tracker .cut-details {
-  flex: 0 1 250px;
-  min-width: 180px;
+@media (max-width: 340px) {
+  .cut-tracker .cut-window { flex-basis: 100%; }
 }
-
-#chatgpt-usage-tracker .cut-session-row,
-#chatgpt-usage-tracker .cut-meter {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-#chatgpt-usage-tracker .cut-label,
-#chatgpt-usage-tracker .cut-reset-time {
-  color: color-mix(in srgb, currentColor 68%, transparent);
-}
-
-#chatgpt-usage-tracker .cut-session,
-#chatgpt-usage-tracker .cut-percentage {
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-#chatgpt-usage-tracker .cut-meter {
-  margin: 4px 0 3px;
-}
-
-#chatgpt-usage-tracker .cut-meter[hidden] {
-  display: none;
-}
-
-#chatgpt-usage-tracker .cut-progress {
-  flex: 1 1 auto;
-  height: 5px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: color-mix(in srgb, currentColor 13%, transparent);
-}
-
-#chatgpt-usage-tracker .cut-progress span {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: #10a37f;
-  transition: width 180ms ease;
-}
-
-#chatgpt-usage-tracker .cut-percentage {
-  width: 28px;
-  text-align: right;
-}
-
-#chatgpt-usage-tracker .cut-reset-time {
-  white-space: nowrap;
-}
-
-@media (max-width: 520px) {
-  #chatgpt-usage-tracker {
-    flex-wrap: wrap;
-    gap: 5px 10px;
-    padding: 7px 10px;
-  }
-
-  #chatgpt-usage-tracker .cut-model {
-    flex-basis: 100%;
-    text-align: left;
-  }
-
-  #chatgpt-usage-tracker .cut-details {
-    flex: 1 1 100%;
-    min-width: 0;
-  }
+@media (prefers-reduced-motion: reduce) {
+  .cut-tracker .cut-progress span { transition: none; }
 }

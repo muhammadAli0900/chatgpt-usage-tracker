@@ -3,25 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT Usage Tracker</title>
-    <style>
-      body { min-width: 220px; margin: 0; padding: 14px; font: 13px/1.4 system-ui, sans-serif; }
-      h1 { margin: 0 0 10px; font-size: 16px; }
-      p { display: flex; justify-content: space-between; gap: 12px; margin: 6px 0; }
-      span:last-child { font-weight: 600; }
-      button { width: 100%; margin-top: 10px; padding: 7px 9px; border: 1px solid color-mix(in srgb, currentColor 20%, transparent); border-radius: 7px; background: transparent; color: inherit; cursor: pointer; font: inherit; }
-      button:hover { background: color-mix(in srgb, currentColor 7%, transparent); }
-    </style>
+    <title>Codex / Work usage</title>
+    <link rel="stylesheet" href="popup.css">
   </head>
   <body>
-    <h1>ChatGPT Usage Tracker</h1>
-    <p><span>Model</span><span id="model">Unknown</span></p>
-    <p><span>Plan</span><span id="plan">Unknown</span></p>
-    <p><span>Session</span><span id="count">0</span></p>
-    <p id="limit-status">Limit not configured</p>
-    <p id="reset-time"></p>
-    <button type="button" id="reset-development-data">Reset development data</button>
-    <script src="config.js"></script>
+    <aside id="usage-popup" aria-label="Codex / Work usage"></aside>
+    <script src="usage.js"></script>
     <script src="popup.js"></script>
   </body>
 </html>
